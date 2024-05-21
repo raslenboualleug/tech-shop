@@ -1,35 +1,87 @@
-const config = require("./config.js");
 const { Sequelize, DataTypes } = require("sequelize");
 
-// create a database connection in your application using a Sequelize instance and the config file
+
+// Create a database connection
 const connection = new Sequelize(
-  "hello_world_db",
-  "DATABASE_USERNAME",
-  "DATABASE_PASSWORD",
+  
+   "myshop",
+  "root",
+   "root",
   {
-    host: "host_name",
+    host: "localhost",
     dialect: "mysql",
   }
-);
+)
 
-//verify your connection here !
-connection.authenticate();
-
-//  create your table using sequilize
-const TableName = connection.define("phrases", {
- 
-});
-
-// this call, Sequelize will automatically perform an SQL query to the database and create a table, printing the message phrase table created successfully!.
-// please run this below *****one time***** after creating your connection
-
-connection
-  .sync({ force: true })
+connection.authenticate()
   .then(() => {
-    console.log("phrase table created successfully!");
+    console.log("Database connected.");
   })
   .catch((error) => {
-    console.error("Unable to create table : ", error);
+    console.error("Failure connecting the database:", error);
   });
+const Product = connection.define("Product", {
 
-// export your Model Phrase below
+  name: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  price: {
+    type: DataTypes.FLOAT,
+    allowNull: false
+  },
+  description: {
+    type: DataTypes.TEXT,
+  
+  },
+  quantity: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+    defaultValue: 0
+  },
+  //add categorie
+  imageUrl: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  categorie:{
+    type: DataTypes.STRING,
+    allowNull: false
+  }
+});
+const user=connection.define("user", {
+  username: {
+    type: DataTypes.STRING,
+   
+  },
+  email: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false
+  },
+
+}
+)
+const order= connection.define("order",{
+  
+
+  userId: {
+    type: DataTypes.INTEGER,
+    allowNull: false
+  },
+  total: {
+    type: DataTypes.FLOAT,
+    allowNull: false
+  }
+
+})
+user.hasOne(Product)
+
+ 
+
+
+
+module.exports = {Product,connection,user};
