@@ -19,7 +19,7 @@ const Login = () => {
         .then(response => {
             console.log(response.data);
             localStorage.setItem("user", email);
-           
+             navigate("/productList")
         })
         .catch(error => {
             setError(error.response?.data?.error || 'Invalid email or password');
@@ -31,7 +31,7 @@ const Login = () => {
             <h3>Login</h3>
             <form onSubmit={checkAcc}>
                 <input 
-                    type="text" 
+                    type="text"  
                     placeholder="email" 
                     value={email} 
                     onChange={(e) => setEmail(e.target.value)} 
@@ -43,9 +43,10 @@ const Login = () => {
                     onChange={(e) => setPassword(e.target.value)} 
                 />
                 <p>
-                    JOIN US 
+                    JOIN US  
+                    <br />
                     <button onClick={(e) => {
-                        navigate("/register");
+                        navigate("/regester");
                     }}>
                         Register
                     </button>

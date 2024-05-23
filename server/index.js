@@ -9,7 +9,9 @@ app.use(cors());
 //user routes
 const userRoutes=require('../server/database/user/routes')
 app.use('/users',userRoutes)
+const productRoutes=require('./database/products/prodrouts')
 
+app.use('/products',productRoutes)
 
 
 

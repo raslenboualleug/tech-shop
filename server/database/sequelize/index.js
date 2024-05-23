@@ -4,7 +4,7 @@ const { Sequelize, DataTypes } = require("sequelize");
 // Create a database connection
 const connection = new Sequelize(
   
-   "myshop",
+   "shopify",
   "root",
    "root",
   {
@@ -20,35 +20,32 @@ connection.authenticate()
   .catch((error) => {
     console.error("Failure connecting the database:", error);
   });
-const Product = connection.define("Product", {
+  // connection
+  // .sync()
+  // .then(() => {
+  //   console.log("Tables created successfully!");
+  // })
+  // .catch((error) => {
+  //   console.error("Unable to create tables:", error);
+  // });
 
-  name: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  price: {
-    type: DataTypes.FLOAT,
-    allowNull: false
-  },
-  description: {
-    type: DataTypes.TEXT,
-  
-  },
-  quantity: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    defaultValue: 0
-  },
-  //add categorie
-  imageUrl: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  categorie:{
-    type: DataTypes.STRING,
-    allowNull: false
-  }
-});
+  const Product = connection.define('Product', {
+    name: 
+    { type: DataTypes.STRING,
+       allowNull: false },
+    price: 
+    { type: DataTypes.FLOAT, 
+      allowNull: false },
+    category: 
+    { type: DataTypes.STRING, 
+      allowNull: false },
+    description: 
+    { type: DataTypes.TEXT,
+       allowNull: false },
+    image: 
+    { type: DataTypes.STRING,
+       allowNull: true }
+  });
 const user=connection.define("user", {
   username: {
     type: DataTypes.STRING,
@@ -65,7 +62,8 @@ const user=connection.define("user", {
 
 }
 )
-const order= connection.define("order",{
+
+const Order= connection.define("order",{
   
 
   userId: {
@@ -78,9 +76,13 @@ const order= connection.define("order",{
   }
 
 })
-user.hasOne(Product)
 
- 
+
+user.hasMany(Product)
+Product.belongsTo(user)
+user.hasOne(Order)
+Order.belongsTo(user)
+
 
 
 
