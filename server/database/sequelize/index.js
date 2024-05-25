@@ -13,15 +13,14 @@ const connection = new Sequelize(
   }
 )
 ////////////////////////////////*
-connection
-.sync()
-.then(() => {
-  console.log("Tables created successfully!");
-})
-.catch((error) => {
-  console.error("Unable to create tables:", error);
-});
-////////////////////////////////*
+// connection.sync({ force: true }) 
+//   .then(() => {
+//     console.log("Tables created successfully!");
+//   })
+//   .catch((error) => {
+//     console.error("Unable to create tables:", error);
+//   });
+// ////////////////////////////////*
 
 connection.authenticate()
   .then(() => {
