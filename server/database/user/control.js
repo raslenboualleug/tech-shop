@@ -40,7 +40,7 @@ const login = (req, res) => {
           }
 
           const token = jwt.sign({ id: user.id }, process.env.ACCESS_TOKEN_SECRET);
-          res.json({ token });
+          res.json({ token,user:user.toJSON() });
         })
         .catch(err => {
           console.error('Error comparing passwords:', err);

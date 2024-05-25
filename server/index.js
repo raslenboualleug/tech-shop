@@ -12,7 +12,8 @@ app.use('/users',userRoutes)
 const productRoutes=require('./database/products/prodrouts')
 
 app.use('/products',productRoutes)
-
+ const orderRoutes=require('./database/order/orderoutes')
+ app.use('/orders',orderRoutes)
 
 
 app.listen(PORT, () => {

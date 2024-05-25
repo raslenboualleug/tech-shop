@@ -12,6 +12,16 @@ const connection = new Sequelize(
     dialect: "mysql",
   }
 )
+////////////////////////////////*
+connection
+.sync()
+.then(() => {
+  console.log("Tables created successfully!");
+})
+.catch((error) => {
+  console.error("Unable to create tables:", error);
+});
+////////////////////////////////*
 
 connection.authenticate()
   .then(() => {
@@ -20,15 +30,7 @@ connection.authenticate()
   .catch((error) => {
     console.error("Failure connecting the database:", error);
   });
-  // connection
-  // .sync()
-  // .then(() => {
-  //   console.log("Tables created successfully!");
-  // })
-  // .catch((error) => {
-  //   console.error("Unable to create tables:", error);
-  // });
-
+  
   const Product = connection.define('Product', {
     name: 
     { type: DataTypes.STRING,
@@ -65,25 +67,18 @@ const user=connection.define("user", {
 
 const Order= connection.define("order",{
   
-
-  userId: {
-    type: DataTypes.INTEGER,
-    allowNull: false
+  products: {
+    type: DataTypes.STRING,
+    allowNull: false,
   },
+
   total: {
     type: DataTypes.FLOAT,
     allowNull: false
   }
-
+    
 })
 
-
-user.hasMany(Product)
-Product.belongsTo(user)
-user.hasOne(Order)
-Order.belongsTo(user)
-
-
-
-
-module.exports = {Product,connection,user};
+user.hasMany(Order,{foreignKey: 'userId'});
+  Order.belongsTo(user,{foreignKey: 'userId'})
+module.exports = {Product,connection,user,Order};

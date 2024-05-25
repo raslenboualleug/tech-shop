@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Nav from './nav';
+import "./productList.css"
 
 
 const ProductList = () => {
@@ -27,6 +28,7 @@ const ProductList = () => {
   return (
     <div >
       <Nav filterByCategory={filterByCategory} />
+
       <div className="product-list">
         {error && <p style={{ color: 'red' }}>{error}</p>}
         {filteredProducts.map(product => (

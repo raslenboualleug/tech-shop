@@ -1,19 +1,67 @@
-ProductList.css
-
+/* Product List Container */
 .product-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Adjust the column width as needed */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-  }
-  
-  .product-item {
-    border: 1px solid #ccc;
+}
+
+/* Individual Product Item */
+.product-item {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     padding: 20px;
     text-align: center;
-  }
-  
-  .product-item img {
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Product Image */
+.product-item img {
     max-width: 100%;
-    height: auto;
-  }
-  
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Product Name */
+.product-item h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #e50914;
+}
+
+/* Product Description */
+.product-item p {
+    margin-bottom: 10px;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Product Price */
+.product-item p:nth-of-type(2) {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+/* Product Category */
+.product-item p:nth-of-type(3) {
+    color: #e50914;
+    font-size: 0.9rem;
+}
+
+/* Error Message Styling */
+.product-list p[style] {
+    font-family: 'Roboto', sans-serif;
+    color: red;
+}
+
+/* Additional Styles for Overall Look */
+body {
+    background-color: #0d0d0d;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}

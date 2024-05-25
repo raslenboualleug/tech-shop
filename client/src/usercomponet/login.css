@@ -1,87 +1,93 @@
-/* src/styles/Login.css
+/* Container Styling */
 .container {
-  max-width: 400px;
-  margin: 50px auto;
-  padding: 20px;
-  background-color: #1e1e1e;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
-h3 {
-  color: #fff;
-  margin-bottom: 20px;
-  font-family: 'Roboto', sans-serif;
+/* Heading Styling */
+.container h3 {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    letter-spacing: 2px;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+/* Form Input Styling */
+.container input[type="text"],
+.container input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #555;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
 }
 
-input[type="text"],
-input[type="password"] {
-  margin: 10px 0;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  font-family: 'Roboto', sans-serif;
-  outline: none;
+.container input[type="text"]::placeholder,
+.container input[type="password"]::placeholder {
+    color: #888;
 }
 
-input[type="text"]::placeholder,
-input[type="password"]::placeholder {
-  color: #aaa;
+/* Button Styling */
+.container button {
+    padding: 10px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e50914;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-button {
-  margin: 10px 0;
-  padding: 10px;
-  background-color: #0078d7;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1em;
-  font-family: 'Roboto', sans-serif;
-  transition: background-color 0.3s, transform 0.3s;
+.container button:hover {
+    background-color: #f0131e;
 }
 
-button:hover {
-  background-color: #005bb5;
-  transform: scale(1.05);
+/* Register Button Styling */
+.container p button {
+    background-color: transparent;
+    color: #e50914;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.3s ease;
 }
 
-button:active {
-  background-color: #003f7f;
+.container p button:hover {
+    color: #f0131e;
 }
 
-p {
-  color: #bbb;
-  font-family: 'Roboto', sans-serif;
+/* Error Message Styling */
+.container p[style] {
+    margin-top: 20px;
+    font-family: 'Roboto', sans-serif;
 }
 
-p a {
-  color: #0078d7;
-  text-decoration: none;
+/* Join Us Text Styling */
+.container p {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 20px;
 }
 
-p a:hover {
-  text-decoration: underline;
+/* Additional Styles for Overall Look */
+body {
+    background-color: #0d0d0d;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
 }
-
-p a:active {
-  color: #005bb5;
-}
-
-p {
-  margin-top: 20px;
-}
-
-.error {
-  color: red;
-  font-family: 'Roboto', sans-serif;
-  margin-top: 10px;
-} */

@@ -1,68 +1,75 @@
-/* src/styles/Register.css
-.register-container {
+/* Container Styling */
+.container, .register-container {
     max-width: 400px;
-    margin: 50px auto;
+    margin: 0 auto;
     padding: 20px;
-    background-color: #1e1e1e;
+    background-color: #1a1a1a;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     text-align: center;
-  }
-  
-  h3 {
-    color: #fff;
+}
+
+/* Heading Styling */
+.container h3, .register-container h3 {
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
     margin-bottom: 20px;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    margin: 10px 0;
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+/* Form Input Styling */
+.container input[type="text"], 
+.container input[type="password"],
+.register-container input[type="text"], 
+.register-container input[type="email"],
+.register-container input[type="password"] {
+    width: 90%;
     padding: 10px;
-    border: none;
+    margin: 10px 0;
+    border: 1px solid #555;
     border-radius: 5px;
-    font-size: 1em;
-    font-family: 'Roboto', sans-serif;
-    outline: none;
-  }
-  
-  input[type="text"]::placeholder,
-  input[type="email"]::placeholder,
-  input[type="password"]::placeholder {
-    color: #aaa;
-  }
-  
-  button {
-    margin: 10px 0;
-    padding: 10px;
-    background-color: #0078d7;
+    background-color: #333;
     color: #fff;
+    font-size: 1rem;
+    font-family: 'Roboto', sans-serif;
+}
+
+.container input[type="text"]::placeholder, 
+.container input[type="password"]::placeholder,
+.register-container input[type="text"]::placeholder, 
+.register-container input[type="email"]::placeholder,
+.register-container input[type="password"]::placeholder {
+    color: #888;
+}
+
+/* Button Styling */
+.container button, .register-container button {
+    padding: 10px 20px;
+    margin-top: 20px;
     border: none;
     border-radius: 5px;
+    background-color: #e50914;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
     cursor: pointer;
-    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.container button:hover, .register-container button:hover {
+    background-color: #f0131e;
+}
+
+/* Error Message Styling */
+.container p[style], .register-container p[style] {
+    margin-top: 20px;
     font-family: 'Roboto', sans-serif;
-    transition: background-color 0.3s, transform 0.3s;
-  }
-  
-  button:hover {
-    background-color: #005bb5;
-    transform: scale(1.05);
-  }
-  
-  button:active {
-    background-color: #003f7f;
-  }
-  
-  .error {
-    color: red;
+}
+
+/* Additional Styles for Overall Look */
+body {
+    background-color: #0d0d0d;
     font-family: 'Roboto', sans-serif;
-    margin-top: 10px;
-  }
-   */
+    color: #ffffff;
+}

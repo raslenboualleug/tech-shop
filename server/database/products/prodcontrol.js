@@ -32,7 +32,7 @@ exports.updateProduct = (req, res) => {
   Product.update({ name, price, category, description, image }, { where: { id } })
     .then(([rowsUpdate]) => {
       if (rowsUpdate > 0) {
-        res.json({ message: 'Product updated successfully' });
+        res.json({ message: 'Product updated successfully' }); 
       } else {
         res.status(404).json({ error: 'Product not found' });
       }
