@@ -70,11 +70,15 @@ const Order= connection.define("order",{
     type: DataTypes.STRING,
     allowNull: false,
   },
-
   total: {
     type: DataTypes.FLOAT,
-    allowNull: false
-  }
+    allowNull: false,
+  },
+  totalPrice: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+    defaultValue: 0,
+  },
     
 })
 

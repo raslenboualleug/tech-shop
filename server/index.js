@@ -13,6 +13,9 @@ const productRoutes=require('./database/products/prodrouts')
 
 app.use('/products',productRoutes)
 
+const orderRoutes = require('./database/order/orderoutes');
+app.use('/orders', orderRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Server listening at http://localhost:${PORT}`);

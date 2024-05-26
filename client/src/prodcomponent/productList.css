@@ -53,15 +53,20 @@
     font-size: 0.9rem;
 }
 
-/* Error Message Styling */
-.product-list p[style] {
-    font-family: 'Roboto', sans-serif;
-    color: red;
+
+
+
+
+.site-title {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 3rem;
+  font-weight: bold; 
+  color: #8e0000;
+  text-align: center; 
+  margin-top: 20px; 
+  text-transform: uppercase; 
+  letter-spacing: 0.1em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* Additional Styles for Overall Look */
-body {
-    background-color: #0d0d0d;
-    font-family: 'Roboto', sans-serif;
-    color: #ffffff;
-}
+ 

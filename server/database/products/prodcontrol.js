@@ -1,12 +1,12 @@
 const { Product } = require('../sequelize/index');
 
-exports.getAllProducts = (req, res) => {
+getAllProducts = (req, res) => {
   Product.findAll()
     .then(products => res.json(products))
     .catch(error => res.status(400).json({ error: error.message }));
 };
 
-exports.getProductById = (req, res) => {
+getProductById = (req, res) => {
   const { id } = req.params;
   Product.findByPk(id)
     .then(product => {
@@ -19,14 +19,14 @@ exports.getProductById = (req, res) => {
     .catch(error => res.status(400).json({ error: error.message }));
 };
 
-exports.createProduct = (req, res) => {
+createProduct = (req, res) => {
   const { name, price, category, description, image } = req.body;
   Product.create({ name, price, category, description, image })
     .then(product => res.status(201).json(product))
     .catch(error => res.status(400).json({ error: error.message }));
 };
 
-exports.updateProduct = (req, res) => {
+updateProduct = (req, res) => {
   const { id } = req.params;
   const { name, price, category, description, image } = req.body;
   Product.update({ name, price, category, description, image }, { where: { id } })
@@ -40,7 +40,7 @@ exports.updateProduct = (req, res) => {
     .catch(error => res.status(400).json({ error: error.message }));
 };
 
-exports.deleteProduct = (req, res) => {
+deleteProduct = (req, res) => {
   const { id } = req.params;
   Product.destroy({ where: { id } })
     .then(rowsDeleted => {
@@ -52,3 +52,12 @@ exports.deleteProduct = (req, res) => {
     })
     .catch(error => res.status(400).json({ error: error.message }));
 };
+
+
+module.exports={
+  getAllProducts,
+  getProductById,
+  createProduct,
+  updateProduct,
+  deleteProduct
+}

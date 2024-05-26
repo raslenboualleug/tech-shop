@@ -1,13 +1,13 @@
 
 import React from 'react';
 import "./nav.css"
-import { useNavigate } from "react-router-dom";
+
 
 const Nav = ({ filterByCategory }) => {
   const handleClick = (category) => {
     filterByCategory(category);
   };
-  const navigate = useNavigate();
+ 
 
   return (
     <nav>
@@ -17,9 +17,7 @@ const Nav = ({ filterByCategory }) => {
         <li><a onClick={() => handleClick('PCs')}><i className="fas fa-desktop"></i></a></li>
         <li><a onClick={() => handleClick('laptops')}><i className="fas fa-laptop"></i></a></li>
         <li><a onClick={() => handleClick('mouses')}><i className="fas fa-mouse"></i></a></li>
-        <li><a onClick={(e) => {
-                      
-                    }}><i className="fas fa-shopping-cart"></i></a></li>
+        <li><a onClick={(e) => { }}><i className="fas fa-shopping-cart"></i></a></li>
     </ul>
 </nav>
 
