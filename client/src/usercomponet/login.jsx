@@ -22,7 +22,7 @@ const Login = () => {
              navigate("/productList")
         })
         .catch(error => {
-            setError(error.response?.data?.error || 'Invalid email or password');
+            setError(error|| 'Invalid email or password');
         });
     }
 

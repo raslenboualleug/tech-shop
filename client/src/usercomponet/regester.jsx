@@ -38,10 +38,7 @@ const Register = () => {
           });
         }
       })
-      .catch(error => {
-        console.error(error);
-        setError("An error occurred while fetching users.");
-      })
+    
     }
 
   return (
